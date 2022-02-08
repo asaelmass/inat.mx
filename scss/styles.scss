@@ -1,23 +1,256 @@
-@import "bootstrap";
-
 $theme-colors:(
     "primary": #4d446c,
     "secondary":#86a43f,
 );
+
+@import "bootstrap";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+.content {
+  /*margin: 4em auto;*/
+  text-align: justify;
+}
+
+.logo img {
+  width: 132px;
+  height: 128px;
+  position:absolute;
+  margin: 18px;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  line-height: 60px;
+  z-index: 100;
+
+}
+
+nav ul {
+  line-height: 60px;
+  list-style: none;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  color: #fff;
+  padding: 0;
+  text-align: right;
+  margin: 0;
+  padding-right: 40px;
+  transition: 1s;
+}
+
+nav.black ul {
+  background: #000;
+  height: 163px;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 58px 25px;;
+}
+
+.login, a.login:hover {
+  color: #86a43f;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5vw;
+}
+nav ul li a:hover {
+  text-decoration: none;
+  color:#fff;
+}
+.menu-icon {
+  line-height: 60px;
+  width: 100%;
+  background: #000;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 15px 24px;
+  cursor: pointer;
+  color: #fff;
+  display: none;
+}
+
+@media(max-width: 786px) {
+
+  .logo {
+        position: fixed;
+        top: 0;
+        margin-top: 16px;
+        visibility: hidden;
+  }
+
+  nav ul {
+        max-height: 0px;
+        background: #000;
+        line-height: 25px;
+  }
+
+  nav.black ul {
+        background: #000;
+  }
+
+  .showing {
+        max-height: 34em;
+  }
+
+  nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+
+  .menu-icon {
+    background: transparent!important;
+        display: block;
+        
+  }
+  .carousel-caption {
+    top: 55% !important;
+    transform: translateY(-55%);
+  }
+
+}
+
+
 .carousel-control-prev-icon {
   background-image: url(../../img/flechaizq.png)!important;
 }
 .carousel-control-next-icon {
   background-image: url(../../img/flechader.png)!important;
 }
+
+.carousel-caption {
+  top: 70% !important;
+  transform: translateY(-70%);
+}
 .carousel-caption h2{
   font-family: 'Montserrat Light', arial;
-  font-size: 66px!important;
+  font-size: 5vw!important;
   font-weight: 400;
 }
 .carousel-caption span{
   color: theme-color("secondary");
-  font-size: 66px!important;
   font-family: 'Montserrat Bold', arial;
   font-weight: 700;
+  font-size: 4vw;
 }
+
+section{
+  margin-top: 40px;
+  text-align: center;
+}
+section h2{
+  margin-bottom: 40px;
+}
+section p{
+  font-size:22px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0px 20px 0px 20px;
+}
+
+#experiencia {
+  background-image: url(../../img/fruitsparallax.jpg);
+  min-height: 290px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+#experiencia h3.banner-title {
+  padding-top: 120px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 0;
+  max-width: 427px;
+  max-height: 659px;
+}
+
+.card2{
+  max-width: 1356px!important;
+}
+.carousel-inner-diplomados {
+  padding: 1em;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #e1e1e1;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .card img {
+    height: 100%;
+  }
+}
+
+.hovereffect {
+  width:100%;
+  height:100%;
+  float:left;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+  cursor:pointer;
+  border-radius: 10px;
+  }
+  
+  .hovereffect .overlay {
+  width:100%;
+  height:100%;
+  position:absolute;
+  overflow:hidden;
+  top:0;
+  left:0;
+  opacity:0;
+  background-color:rgba(0,0,0,0.5);
+  -webkit-transition:all .4s ease-in-out;
+  transition:all .4s ease-in-out
+  }
+  
+  .hovereffect img {
+  display:block;
+  position:relative;
+  -webkit-transition:all .4s linear;
+  transition:all .4s linear;
+  }
+  .hovereffect a.info:hover {
+    box-shadow:0 0 5px #fff;
+    }
+    
+    .hovereffect:hover img {
+    -ms-transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+    transform:scale(1.05);
+    }
+    
+    .hovereffect:hover .overlay {
+    opacity:1;
+    filter:alpha(opacity=100);
+    }
