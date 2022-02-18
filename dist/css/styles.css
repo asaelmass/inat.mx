@@ -6919,11 +6919,34 @@ section p {
   background-size: cover;
   background-position: 50% 50%; }
 
-#experiencia h3.banner-title {
-  padding-top: 120px;
+#educacion-integral {
+  background-image: url(../../img/saladparallax.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%; }
+
+#educacion-integral .container {
+  min-height: 950px; }
+
+.titulo {
+  font-family: 'Montserrat', arial;
+  font-size: 20px !important;
+  font-weight: 700 !important; }
+
+#educacion-integral p {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  font-weight: 300; }
+
+h3.banner-title {
+  padding-top: 100px;
   padding-bottom: 20px;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  font-weight: 700;
+  font-size: 2vw; }
 
 .cards-wrapper {
   display: flex;
