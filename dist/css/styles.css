@@ -6979,35 +6979,52 @@ h3.banner-title {
   top: 50%;
   transform: translateY(-50%); }
 
-#directorio-item .foto {
+#directorio .foto {
   border-radius: 50%;
   position: relative;
   overflow: hidden; }
-
-#directorio-item .pestana {
+#directorio .pestana {
   border-radius: 50%;
   position: absolute;
   background-color: #9ab161a9;
   top: 70%;
   width: 100%;
   height: 50%; }
-
-#directorio-item h2, #directorio-item h3, #directorio-item h5 {
+#directorio .insignia {
+  position: absolute;
+  top: 62%;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 25%; }
+#directorio .texto {
+  width: 100%;
+  position: absolute;
+  top: 88%;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #713482; }
+#directorio .insignia-imagen-1 {
+  background-image: url("../../img/directorio/insignia-mencion.png"); }
+#directorio .insignia-imagen-2 {
+  background-image: url("../../img/directorio/insignia-diplomado.png"); }
+#directorio .insignia-imagen-3 {
+  background-image: url("../../img/directorio/insignia-profesional.png"); }
+#directorio .item h2, #directorio .item h3, #directorio .item h5 {
   font-weight: bold !important;
-  color: #333 !important; }
-
-#directorio-item h3 {
-  font-weight: 400;
-  color: #333 !important; }
-
-#directorio-item h5 {
-  font-size: 1.5rem; }
-
-#directorio-item h2 {
-  font-size: 1.2rem;
-  margin: 0px; }
-
-.social-link {
+  color: #333 !important;
+  margin: 2px !important; }
+#directorio .item h2 {
+  font-size: .60rem; }
+#directorio .item h3 {
+  font-weight: 400 !important;
+  font-size: .60rem; }
+#directorio .item h5 {
+  font-size: .75rem;
+  margin-top: 5px !important; }
+#directorio .social-link {
   width: 40px;
   height: 40px;
   display: flex;
@@ -7018,15 +7035,23 @@ h3.banner-title {
   transition: all 0.3s;
   font-size: 1.5rem;
   background-color: #9ab161; }
-
-.social-link:hover, .social-link:focus {
+#directorio .social-link:hover, #directorio .social-link:focus {
   background: #9ab161a9;
   text-decoration: none;
   color: white; }
 
+@media (min-width: 576px) {
+  #directorio .texto {
+    font-size: 0.60rem; } }
 @media (min-width: 768px) {
   .card img {
-    height: 100%; } }
+    height: 100%; }
+
+  #directorio .texto {
+    font-size: 0.85rem !important; } }
+@media (min-width: 1200px) {
+  #directorio .texto {
+    font-size: 0.65rem !important; } }
 .hovereffect {
   width: 100%;
   height: 100%;
