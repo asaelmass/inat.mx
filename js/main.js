@@ -1,6 +1,6 @@
 var array_paises = [];
 var array_ciudades = [];
-var items = [];
+var items = new Array();
 
 $(document).ready(function () {
       $(".menu-icon").on("click", function () {
@@ -9,30 +9,79 @@ $(document).ready(function () {
 
 
       $.getJSON("trofologos.json", function (data) {
+            var $controles = $("#directorio .controles");
+            $paises = $controles.find('select.pais');
             
-
+            var ip=0;
+            var ic=0;
             $.each(data, function(index, item){
-                  if (!items[item.pais])
-                        items[item.pais]=[];                 
-                  if (!items[item.pais][item.ciudad])
-                        items[item.pais][item.ciudad] = []
-                  items[item.pais][item.ciudad].push(item);
+
+
+                  ip=jQuery.inArray(item.pais, items);
+                  if (ip<0) {
+                        ip=items.push({nombre:item.pais,ciudades:[]});
+                        ip+ip-1;
+                  };
+                  //console.log(items);
+
+                  ip=items.findIndex(i => i.nombre == item.pais);
+                  //console.log(ip);
+
+
+                  //ip=jQuery.inArray(item.pais, items);
+                  //console.log(ip);
+
+                  x=jQuery.inArray(item.ciudad, items[ip]["ciudades"]);
+                  if (x<0) items[ip]["ciudades"]=[];
+                  //console.log(items);
+                  
+                  ic=jQuery.inArray(item.ciudad, items[ip]["ciudades"]);
+                  if (ic<0)   ip=items[ip]["ciudades"].push(item.ciudad);
+                  //ip=jQuery.inArray(item.ciudad, items[ip]["ciudades"]);
+
+                  //items[i]=item.pais;
+//                  items.push({name:item.pais, index:ip})
+                  //items[item.pais]=item.pais;
+                  //if (!items[item.pais]["ciudades"])items[item.pais].push(item.ciudad);
+                  //items[item.pais]["ciudades"].push(item.ciudad);
+                  //if (!items[ip]){
+                  //      items.push(ip);
+                  //      items[ip]["nombre"]=item.pais;
+                  //      ip++;
+                 // }
+                                         
+                  //if (!items[item.pais][item.ciudad]) items[item.pais][item.ciudad] = []
+                  //items[item.pais][item.ciudad].push(item);
 
             });
+            console.log(items);
+
+            items.forEach(function(value, key){
+                  //console.log(value);
+            });
+
+            $.each(items, function(){
+                  //var $option = $('<option/>', {
+                  //      value: key,
+                  //      text: value
+                  //});
+                  //$paises.append($option);
+                  //console.log(this);
+            });
+
+            //console.log($paises);
 
 //////hasta aqui todo bien
 
             var $controles = $("#directorio .controles");
-
-
             $paises = $controles.find('select.pais');
             $ciudades = $controles.find('select.ciudad');
             $paises.empty();
             $ciudades.empty();
 
             $.each(items, function (pais_index, pais_item) {
-                  console.log(items[pais_index])
-                  console.log(items[pais_index])
+                  //console.log(items[pais_index])
+                  //console.log(items[pais_index])
                   var $option = $('<option/>', {
                         value: pais_index,
                         text: pais_item.nombre
@@ -46,7 +95,7 @@ $(document).ready(function () {
             });
             $.each(data[0].items, function (item_index, item) {
                   // console.log("Trofologo: "+k.nombre +" Ciudad: "+ k.ciudad)
-                  console.log(pais_index);
+                  //console.log(pais_index);
                   if (!items[pais_index][ciudad_index][item_index])
                         items[pais_index][ciudad_index][item_index] = []
                   items[pais_index][ciudad_index][item_index]["nombre"]= item.nombre;
@@ -62,11 +111,14 @@ $(document).ready(function () {
       });
 
       $('#directorio .pais').change(function () {
-            var value = $(this).val();
-            var controles = $("#directorio .controles");
-            $ciudades = controles.find('select.ciudad');
+            var pais = $("#directorio select.pais").val();
+            var ciudad = $(this).val();
+            console.log(pais);
+            console.log(ciudad);
+
+            var ciudades = $("#directorio select.ciudad");
             $ciudades.empty();
-            $.each(array_ciudades[value], function (index, item) {
+            $.each(items[item.pais][ciudad], function (index, item) {
                   var $option = $('<option/>', {
                         value: index,
                         text: item
@@ -74,6 +126,10 @@ $(document).ready(function () {
                   $ciudades.append($option);
             });
       });
+
+      function aplicarFiltro(p,c){
+
+      }
 
       $("#btnFiltroAplicar").click(function () {
             var $items = $("#directorio .items");
