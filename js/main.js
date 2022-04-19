@@ -107,7 +107,7 @@ function FiltroAplicar() {
                         <h3>Whatsapp: ${item.whatsapp}</h3>
                         <ul class="social mb-0 list-inline mt-3">
                         <li class="list-inline-item"><a href="https://wa.me/${item.whatsapp}" class="social-link" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
-                        <li class="list-inline-item"><a href="${item.facebook}" class="social-link" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="${item.facebook}" class="social-link" target="_blank"><i class="fa fa-envelope-o fa fw"></i></a></li>
                         </ul>
                         </div><!-- End -->
                         `

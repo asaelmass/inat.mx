@@ -57,13 +57,25 @@ if ($comando =='contactos'){
         {$sql_ciudad}
         Order by di.valor desc, nombre asc";    
         
-    //echo $sql;
-    //exit;
     $result = $conn->query($sql);
-    //$stmt->execute();
 
     while($row=$result->fetch_assoc()){
-          $contactosData['Contactos'][] = $row;    
+        $contacto = array();
+        $contacto["contacto_id"]        =   $row["contacto_id"];
+        $contacto["nombre"]             =   $row["nombre"];
+        $contacto["foto"]               =   $row["foto"];
+        $contacto["whatsapp"]           =   $row["whatsapp"];
+        $contacto["ciudad"]             =   $row["ciudad"];
+        $contacto["pais"]               =   $row["pais"];
+        $contacto["insignia_id"]        =   $row["insignia_id"];
+        $contacto["insignia"]        =   $row["insignia"];
+        $contacto["insignia_imagen"]    =   $row["insignia_imagen"];
+
+        $filename = 'img/directorio/'.$contacto["foto"];
+
+        if (!is_file($filename)) $contacto["foto"] ="user-placeholder.jpg";
+
+          $contactosData['Contactos'][]= $contacto;    
     }
     echo json_encode($contactosData);
     exit;
