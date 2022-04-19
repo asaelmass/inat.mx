@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/favicon-inat.png">
   <link rel="stylesheet" href="dist/css/styles.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -27,9 +28,10 @@
         </div>
         <div class="menu">
           <ul>
-            <li><a href="#">INICIO</a></li>
+            <li><a href="index.html">INICIO</a></li>
             <li><a href="#quienes-somos">QUIENES SOMOS</a></li>
             <li><a href="#diplomados">DIPLOMADOS</a></li>
+            <li><a href="directorio.html">DIRECTORIO</a></li>
             <li><a href="#">CONTACTO</a></li>
             <li><a class="login" href="#">LOGIN</a></li>
           </ul>
@@ -47,14 +49,15 @@
 
       <section id="directorio">
         <div class="container">
-          <div class="row controles">
+          <div class="controles">
+
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#filtroModalCenter">
               Filtrar
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="filtroModalCenter" tabindex="-1" role="dialog"aria-hidden="true">
+            <div class="modal fade" id="filtroModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -64,8 +67,11 @@
                     </button>
                   </div>
                   <div class="modal-body">
+                    <select class="categ custom-select custom-select-sm mb-3">
+                      <option value="1" selected="selected">Trofología</option>
+                      <option value="2">Plant Based Chef</option>
+                    </select>
                     <select class="pais custom-select custom-select-sm mb-3">
-                      <option value="aa">aaaa</option>
                     </select>
 
                     <select class="ciudad custom-select custom-select-sm">
@@ -88,6 +94,44 @@
       <section>
         <p></p>
       </section>
+    </div>
+    <div id="footer" class="">
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-4">
+            <h3>SERVICIOS iNat</h3>
+            <ul class="product-categories">
+              <li class="cat-item cat-item-66"><a
+                  href="https://trofologia.com/categoria-producto/diplomados/">Diplomados</a></li>
+              <li class="cat-item cat-item-64"><a
+                  href="https://trofologia.com/categoria-producto/talleres/">Talleres</a></li>
+            </ul>
+          </div>
+          <div class="col col-md-4">
+            <h3>CONTACTO</h3>
+            <div class="textwidget">
+              <p><a href="tel:+2221345518">Inscripciones (222) 134 5518</a><br>
+                <a href="http://app.trofologia.com/login.php" target="_blank" rel="noopener noreferrer">Acceso Software
+                  iNat Asesores</a></p>
+            </div>
+            <h3>LEGAL</h3>
+            <div class="textwidget">
+              <p><a href="https://trofologia.com/aviso-de-privacidad/" target="_blank" rel="noopener noreferrer">Aviso
+                  de Privacidad</a><br>
+                <a href="https://trofologia.com/terminos-condiciones-inscripcion/" target="_blank"
+                  rel="noopener noreferrer">Términos y Condiciones</a></p>
+            </div>
+          </div>
+          <div class="col col-md-4">
+            <h3>CONTACTO WHATSAPP</h3><a href="https://wa.me/5212221345518"><img
+                src="https://trofologia.com/wp-content/uploads/2016/02/preguntas_whats.png"
+                class="image wp-image-2771  attachment-full size-full" alt="" style="max-width: 100%; height: auto;"
+                srcset="https://trofologia.com/wp-content/uploads/2016/02/preguntas_whats.png 164w, https://trofologia.com/wp-content/uploads/2016/02/preguntas_whats-150x150.png 150w, https://trofologia.com/wp-content/uploads/2016/02/preguntas_whats-100x100.png 100w"
+                sizes="(max-width: 164px) 100vw, 164px" width="164" height="163"></a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"

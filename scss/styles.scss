@@ -61,7 +61,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 nav ul li a:hover {
   text-decoration: none;
@@ -235,10 +235,15 @@ h3.banner-title {
 
 
 #directorio{
+  .controles{
+    margin: 20px;
+  }
   .foto{
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
   }
   .pestana{
     border-radius: 50%;
@@ -258,6 +263,9 @@ h3.banner-title {
     background-position-x: center;
     background-size: 25%;
   }
+  .insignia-texto{
+    width: 40%!important;
+  }
   .texto{
     width: 100%;
     position: absolute;
@@ -266,15 +274,7 @@ h3.banner-title {
     font-weight: bold;
     color: #713482;
   }
-  .insignia-imagen-1{
-    background-image: url("../../img/directorio/insignia-mencion.png");
-  }
-  .insignia-imagen-2{
-    background-image: url("../../img/directorio/insignia-diplomado.png");
-  }
-  .insignia-imagen-3{
-    background-image: url("../../img/directorio/insignia-profesional.png");
-  }
+
   .item{
     h2,h3,h5{
       font-weight: bold!important;
@@ -282,12 +282,12 @@ h3.banner-title {
       margin: 2px!important;;
     }
     h2{
-      font-size: .75rem;
+      font-size: 1rem;
       
     }
     h3{
       font-weight:400!important;
-      font-size: .70rem;
+      font-size: 1rem;
       
     }
     h5{
@@ -313,9 +313,63 @@ h3.banner-title {
     text-decoration: none;
     color: white;
   }
+
+}
+
+.hover-insignia {
+  transform: translateY(1.5rem);
+  transition: all 0.4s;
+  opacity: 0;
+}
+#directorio .item:hover .hover-insignia {
+  opacity: 1;
+  transform: none;
+}
+
+.hover-insignia2 {
+  opacity: 0;
+}
+#directorio .item:hover .hover-insignia2 {
+  opacity: 1;
+  transform: none;
 }
 
 
+#footer {
+  clear: both;
+  overflow: auto;
+  margin: auto;
+  background: #222;
+  font-size: 14px;
+  color: #7b8887;
+  padding-top: 52px;
+  padding-bottom: 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  a:hover {
+    color: #86a835;
+  }
+  a, a:visited {
+    color: #444;
+    outline: 0;
+    text-decoration: none;
+    -webkit-transition: color .14s linear;
+    -moz-transition: color .14s linear;
+    -ms-transition: color .14s linear;
+    -o-transition: color .14s linear;
+    transition: color .14s linear;
+  }
+  h3 {
+    color: #c8c8c8;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 0;
+    margin-bottom: 22px;
+  }
+}
 @media (min-width: 576px) {
   #directorio{
     .texto{
