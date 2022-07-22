@@ -3,6 +3,8 @@ header('Content-Type: application/json');
 
 require('dbconfig.php');
 
+error_reporting( error_reporting() & ~E_NOTICE );
+
 $contactosData = array();
 
 if (isset($_GET['comando'])) $comando=$_GET['comando'];

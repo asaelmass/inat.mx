@@ -163,7 +163,7 @@ section p{
 
 #directorio-banner {
   background-image: url(../../img/bannerheaderqs.png);
-  min-height: 290px;
+  min-height: 520px;
   background-size: cover;  
 }
 #experiencia h3{
@@ -201,11 +201,18 @@ h3.banner-title {
   color: #fff;
   text-align: center;
   font-weight: 700;
-  font-size: 2vw;
+  font-size: 2.75em;
+  width: 100%;
 }
 .cards-wrapper {
   display: flex;
   justify-content: center;
+}
+.vertical-center {
+  min-height: 520px;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
 }
 
 .card {
@@ -339,9 +346,9 @@ h3.banner-title {
   clear: both;
   overflow: auto;
   margin: auto;
-  background: #222;
+  background: #fff;
   font-size: 14px;
-  color: #7b8887;
+  color: #000;
   padding-top: 52px;
   padding-bottom: 20px;
   position: relative;
@@ -353,7 +360,6 @@ h3.banner-title {
     color: #86a835;
   }
   a, a:visited {
-    color: #444;
     outline: 0;
     text-decoration: none;
     -webkit-transition: color .14s linear;
@@ -363,7 +369,7 @@ h3.banner-title {
     transition: color .14s linear;
   }
   h3 {
-    color: #c8c8c8;
+    color: #000;
     font-size: 14px;
     line-height: 22px;
     margin-top: 0;
